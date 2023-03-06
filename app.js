@@ -1,20 +1,10 @@
-//nodejs version 12
-const fs = require('fs');
+//working with http request
+const http = require('http');
 
-//read file
-fs.readFile('user-data.txt', (err, data) => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    console.log(data.toString());
-})
-
-//create & write file
-fs.writeFile('user-data.txt', 'username=Max', err => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('Wrote to file!');
-    }
+//create server
+const server = http.createServer((request, response) => {
+    response.write('Hello World!'); //render to browser -> localhost:3000 -> Hello World
+    response.end();
 });
+
+server.listen(3000);
