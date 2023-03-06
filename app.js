@@ -7,7 +7,7 @@ fs.readFile('user-data.txt', (err, data) => {
         console.log(err);
         return;
     }
-    console.log(data);
+    console.log(data.toString());
 })
 
 //create & write file
